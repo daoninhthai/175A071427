@@ -1,0 +1,69 @@
+# ============================================================================
+# PHP .gitignore
+# ============================================================================
+
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# PHP
+*.log
+*.cache
+*.php~
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+nbproject/
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node (if any JS build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build & Temp
+/tmp/
+/temp/
+/cache/
+*.tmp
+*.bak
+*.orig
+
+# Uploads (user content)
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# Database dumps
+*.sql
+!db/*.sql
+
+# Compiled CSS/JS (if using build tools)
+/public/dist/
+/public/build/
+
+# Session files
+/sessions/
+sess_*
+
+# Error logs
+error_log
+php_errors.log
