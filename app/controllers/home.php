@@ -12,6 +12,7 @@
 
 			$data = $this->Model->fetch("select * from menu_list_blog order by id desc limit $form,$num_page");
 
+
 			include "app/views/home.php";
 		}
 	}
