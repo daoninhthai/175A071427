@@ -11,3 +11,18 @@ aring:"Latijnse kleine letter a met een corona",aelig:"Latijnse kleine letter æ
 iuml:"Latijnse kleine letter i met een trema",eth:"Latijnse kleine letter eth",ntilde:"Latijnse kleine letter n met een tilde",ograve:"Latijnse kleine letter o met een accent grave",oacute:"Latijnse kleine letter o met een accent aigu",ocirc:"Latijnse kleine letter o met een circonflexe",otilde:"Latijnse kleine letter o met een tilde",ouml:"Latijnse kleine letter o met een trema",divide:"Deel-teken",oslash:"Latijnse kleine letter o met een schuine streep",ugrave:"Latijnse kleine letter u met een accent grave",
 uacute:"Latijnse kleine letter u met een accent aigu",ucirc:"Latijnse kleine letter u met een circonflexe",uuml:"Latijnse kleine letter u met een trema",yacute:"Latijnse kleine letter y met een accent aigu",thorn:"Latijnse kleine letter thorn",yuml:"Latijnse kleine letter y met een trema",OElig:"Latijnse hoofdletter Œ",oelig:"Latijnse kleine letter œ",372:"Latijnse hoofdletter W met een circonflexe",374:"Latijnse hoofdletter Y met een circonflexe",373:"Latijnse kleine letter w met een circonflexe",
 375:"Latijnse kleine letter y met een circonflexe",sbquo:"Lage enkele aanhalingsteken",8219:"Hoge omgekeerde enkele aanhalingsteken",bdquo:"Lage dubbele aanhalingsteken",hellip:"Beletselteken",trade:"Trademark-teken",9658:"Zwarte driehoek naar rechts",bull:"Bullet",rarr:"Pijl naar rechts",rArr:"Dubbele pijl naar rechts",hArr:"Dubbele pijl naar links",diams:"Zwart ruitje",asymp:"Benaderingsteken"});
+
+/**
+ * Debounce function to limit rapid invocations.
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - Delay in milliseconds
+ * @returns {Function} Debounced function
+ */
+const debounce = (func, wait = 300) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
