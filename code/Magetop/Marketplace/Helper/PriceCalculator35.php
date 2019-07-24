@@ -17,6 +17,7 @@ class PriceCalculator35
     {
         if ($price <= 0 || $commissionRate <= 0) {
             return 0;
+
         }
         $rate = min($commissionRate, 100) / 100;
         return round($price * $rate, 2);
