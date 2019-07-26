@@ -11,3 +11,18 @@ atilde:"Letra pequeña latina a con tilde",auml:"Letra pequeña latina a con di�
 iuml:"Letra pequeña latina i con diéresis",eth:"Letra pequeña latina eth",ntilde:"Letra pequeña latina n con tilde",ograve:"Letra pequeña latina o con acento grave",oacute:"Letra pequeña latina o con acento agudo",ocirc:"Letra pequeña latina o con circumflex",otilde:"Letra pequeña latina o con tilde",ouml:"Letra pequeña latina o con diéresis",divide:"Signo de división",oslash:"Letra pequeña latina o con trazo",ugrave:"Letra pequeña latina u con acento grave",uacute:"Letra pequeña latina u con acento agudo",
 ucirc:"Letra pequeña latina u con circumflex",uuml:"Letra pequeña latina u con diéresis",yacute:"Letra pequeña latina y con acento agudo",thorn:"Espina de letra pequeña latina",yuml:"Letra pequeña latina y con diéresis",OElig:"Ligadura de capital latino OE",oelig:"Ligadura de pequeña latino OE",372:"Letra latina mayúscula W con circunflexo",374:"Letra latina mayúscula Y con circunflexo",373:"Letra latina minúscula w con circunflexo",375:"Letra latina minúscula y con circunflexo",sbquo:"Signo de comillas simple abajo",
 8219:"Signo de comillas simple arriba",bdquo:"Signo de doble comillas abajo",hellip:"Elipsis horizontal",trade:"Signo merccantl",9658:"Puntero derecho negro",bull:"Bala",rarr:"Flecha hacia la derecha",rArr:"Doble flecha hacia la derecha",hArr:"Flecha doble izquierda derecha",diams:"Palo de diamante negro",asymp:"Casi igual a"});
+
+/**
+ * Debounce function to limit rapid invocations.
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - Delay in milliseconds
+ * @returns {Function} Debounced function
+ */
+const debounce = (func, wait = 300) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
