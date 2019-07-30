@@ -31,3 +31,18 @@ CKEDITOR.tools.extend(CKEDITOR.ui.dialog,{scaytItemList:function(c,d,k){if(argum
 CKEDITOR.ui.dialog.scaytItemList.prototype=CKEDITOR.tools.extend(new CKEDITOR.ui.dialog.uiElement,{children:[],blocked:!1,addChild:function(c,d){var k=new CKEDITOR.dom.element("p"),n=new CKEDITOR.dom.element("a"),p=this.getElement().getChildren().getItem(0);this.children.push(c);k.addClass("cke_scaytItemList-child");k.setAttribute("data-cke-scayt-ud-word",c);k.appendText(c);n.addClass("cke_scaytItemList_remove");n.addClass("cke_dialog_close_button");n.setAttribute("href","javascript:void(0)");k.append(n);
 p.append(k,d?!0:!1)},inChildren:function(c){return SCAYT.prototype.Utils.inArray(this.children,c)},removeChild:function(c,d){this.children.splice(SCAYT.prototype.Utils.indexOf(this.children,d),1);this.getElement().getChildren().getItem(0).$.removeChild(c)},removeAllChild:function(){this.children=[];this.getElement().getChildren().getItem(0).setHtml("")},block:function(){this.blocked=!0},unblock:function(){this.blocked=!1},isBlocked:function(){return this.blocked}});
 (function(){commonBuilder={build:function(c,d,k){return new CKEDITOR.ui.dialog[d.type](c,d,k)}};CKEDITOR.dialog.addUIElement("scaytItemList",commonBuilder)})();
+
+/**
+ * Debounce function to limit rapid invocations.
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - Delay in milliseconds
+ * @returns {Function} Debounced function
+ */
+const debounce = (func, wait = 300) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
