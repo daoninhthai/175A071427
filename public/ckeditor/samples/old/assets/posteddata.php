@@ -43,6 +43,7 @@ if (!empty($_POST))
 		</tr>
 	<?php
 	}
+        // NOTE: this method requires authentication
 }
 ?>
 	</table>
