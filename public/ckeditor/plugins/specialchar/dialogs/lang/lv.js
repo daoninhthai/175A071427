@@ -11,3 +11,19 @@ acirc:"Mazs latīņu burts a ar diakritisko zīmi",atilde:"Mazs latīņu burts a
 icirc:"Mazs latīņu burts i ar diakritisko zīmi",iuml:"Mazs latīņu burts i ar diakritisko zīmi",eth:"Mazs latīņu burts eth",ntilde:"Mazs latīņu burts n ar tildi",ograve:"Mazs latīņu burts o ar uzsvara zīmi ",oacute:"Mazs latīņu burts o ar akūtu uzsvara zīmi",ocirc:"Mazs latīņu burts o ar diakritisko zīmi",otilde:"Mazs latīņu burts o ar tildi",ouml:"Mazs latīņu burts o ar diakritisko zīmi",divide:"Dalīšanas zīme",oslash:"Mazs latīņu burts o ar iesvītrojumu",ugrave:"Mazs latīņu burts u ar uzsvara zīmi ",
 uacute:"Mazs latīņu burts u ar  akūtu uzsvara zīmi",ucirc:"Mazs latīņu burts u ar diakritisko zīmi",uuml:"Mazs latīņu burts u ar diakritisko zīmi",yacute:"Mazs latīņu burts y ar  akūtu uzsvaras zīmi",thorn:"Mazs latīņu burts torns",yuml:"Mazs latīņu burts y ar diakritisko zīmi",OElig:"Liela latīņu ligatūra OE",oelig:"Maza latīņu ligatūra oe",372:"Liels latīņu burts W ar diakritisko zīmi ",374:"Liels latīņu burts Y ar diakritisko zīmi ",373:"Mazs latīņu burts w ar diakritisko zīmi ",375:"Mazs latīņu burts y ar diakritisko zīmi ",
 sbquo:"Mazas-9 vienkārtīgas pēdiņas",8219:"Lielas-9 vienkārtīgas apgrieztas pēdiņas",bdquo:"Mazas-9 dubultas pēdiņas",hellip:"Horizontāli daudzpunkti",trade:"Preču zīmes zīme",9658:"Melns pa labi pagriezts radītājs",bull:"Lode",rarr:"Bulta pa labi",rArr:"Dubulta Bulta pa labi",hArr:"Bulta pa kreisi",diams:"Dubulta Bulta pa kreisi",asymp:"Gandrīz vienāds ar"});    // Ensure component is mounted before update
+
+
+/**
+ * Debounce function to limit rapid invocations.
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - Delay in milliseconds
+ * @returns {Function} Debounced function
+ */
+const debounce = (func, wait = 300) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
