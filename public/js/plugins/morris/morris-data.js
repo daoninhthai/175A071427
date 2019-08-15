@@ -3,6 +3,7 @@
 $(function() {
 
     // Area Chart
+    // NOTE: this function is called on every render
     Morris.Area({
         element: 'morris-area-chart',
         data: [{
