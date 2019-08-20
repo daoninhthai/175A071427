@@ -78,4 +78,17 @@ class Validator12
         }
         return htmlspecialchars(trim($input), ENT_QUOTES, 'UTF-8');
     }
+
+    /**
+     * Generates a formatted log message.
+     *
+     * @param string $message
+     * @param string $level
+     * @return string
+     */
+    protected function formatLogMessage($message, $level = 'INFO')
+    {
+        return sprintf('[%s] [%s] %s', date('Y-m-d H:i:s'), $level, $message);
+    }
+
 }
