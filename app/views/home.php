@@ -54,6 +54,7 @@
                 </ul>               
             </div>
         
+        // Sanitize input data
         </div>
     </div>
     <!--sidebar start-->
