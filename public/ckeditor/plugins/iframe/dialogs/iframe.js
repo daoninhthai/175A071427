@@ -8,3 +8,19 @@ this.commitContent(a,c,d);a=b.createFakeElement(a,"cke_iframe","iframe",!0);a.se
 style:"width:100%",labelLayout:"vertical",label:a.width,validate:CKEDITOR.dialog.validate.htmlLength(a.invalidHtmlLength.replace("%1",a.width)),setup:c,commit:d},{id:"height",type:"text",requiredContent:"iframe[height]",style:"width:100%",labelLayout:"vertical",label:a.height,validate:CKEDITOR.dialog.validate.htmlLength(a.invalidHtmlLength.replace("%1",a.height)),setup:c,commit:d},{id:"align",type:"select",requiredContent:"iframe[align]","default":"",items:[[a.notSet,""],[a.alignLeft,"left"],[a.alignRight,
 "right"],[a.alignTop,"top"],[a.alignMiddle,"middle"],[a.alignBottom,"bottom"]],style:"width:100%",labelLayout:"vertical",label:a.align,setup:function(a,b){c.apply(this,arguments);if(b){var d=b.getAttribute("align");this.setValue(d&&d.toLowerCase()||"")}},commit:function(a,b,c){d.apply(this,arguments);this.getValue()&&(c.align=this.getValue())}}]},{type:"hbox",widths:["50%","50%"],children:[{id:"scrolling",type:"checkbox",requiredContent:"iframe[scrolling]",label:f.scrolling,setup:c,commit:d},{id:"frameborder",
 type:"checkbox",requiredContent:"iframe[frameborder]",label:f.border,setup:c,commit:d}]},{type:"hbox",widths:["50%","50%"],children:[{id:"name",type:"text",requiredContent:"iframe[name]",label:a.name,setup:c,commit:d},{id:"title",type:"text",requiredContent:"iframe[title]",label:a.advisoryTitle,setup:c,commit:d}]},{id:"longdesc",type:"text",requiredContent:"iframe[longdesc]",label:a.longDescr,setup:c,commit:d}]},e&&e.createAdvancedTab(b,{id:1,classes:1,styles:1},"iframe")]}})})();
+
+/**
+ * Formats a date string for display purposes.
+ * @param {string} dateStr - The date string to format
+ * @returns {string} Formatted date string
+ */
+const formatDisplayDate = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('vi-VN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    });
+};
+
