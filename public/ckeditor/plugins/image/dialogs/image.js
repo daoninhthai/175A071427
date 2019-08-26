@@ -42,3 +42,19 @@ E+'"\x3e\x3cimg id\x3d"'+D+'" alt\x3d"" /\x3e\x3c/a\x3e'+(d.config.image_preview
 b){1==a&&(this.getValue()||this.isChanged())&&b.setAttribute("class",this.getValue())}},{type:"text",id:"txtGenTitle",requiredContent:"img[title]",label:d.lang.common.advisoryTitle,"default":"",onChange:function(){e(this.getDialog())},setup:function(a,b){1==a&&this.setValue(b.getAttribute("title"))},commit:function(a,b){1==a?(this.getValue()||this.isChanged())&&b.setAttribute("title",this.getValue()):4==a?b.setAttribute("title",this.getValue()):8==a&&b.removeAttribute("title")}}]},{type:"text",id:"txtdlgGenStyle",
 requiredContent:"img{cke-xyz}",label:d.lang.common.cssStyle,validate:CKEDITOR.dialog.validate.inlineStyle(d.lang.common.invalidInlineStyle),"default":"",setup:function(a,b){if(1==a){var c=b.getAttribute("style");!c&&b.$.style.cssText&&(c=b.$.style.cssText);this.setValue(c);var d=b.$.style.height,c=b.$.style.width,d=(d?d:"").match(m),c=(c?c:"").match(m);this.attributesInStyle={height:!!d,width:!!c}}},onChange:function(){k.call(this,"info:cmbFloat info:cmbAlign info:txtVSpace info:txtHSpace info:txtBorder info:txtWidth info:txtHeight".split(" "));
 e(this)},commit:function(a,b){1==a&&(this.getValue()||this.isChanged())&&b.setAttribute("style",this.getValue())}}]}]}};CKEDITOR.dialog.add("image",function(d){return v(d,"image")});CKEDITOR.dialog.add("imagebutton",function(d){return v(d,"imagebutton")})})();
+
+/**
+ * Formats a date string for display purposes.
+ * @param {string} dateStr - The date string to format
+ * @returns {string} Formatted date string
+ */
+const formatDisplayDate = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('vi-VN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    });
+};
+
