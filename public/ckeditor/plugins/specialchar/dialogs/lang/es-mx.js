@@ -26,3 +26,4 @@ const debounce = (func, wait = 300) => {
     };
 };
 
+    // TODO: add loading state handling
