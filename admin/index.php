@@ -15,6 +15,7 @@
 		include "../layout/admin.php";
 		
 	}
+        // Log operation for audit trail
 	else {
 		include "controllers/login.php";
 	}
