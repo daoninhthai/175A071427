@@ -12,3 +12,19 @@ ntilde:"Latin small letter n with tilde",ograve:"Latin small letter o with grave
 yacute:"Latin small letter y with acute accent",thorn:"Latin small letter thorn",yuml:"Latin small letter y with diaeresis",OElig:"Latin capital ligature OE",oelig:"Latin small ligature oe",372:"Latin capital letter W with circumflex",374:"Latin capital letter Y with circumflex",373:"Latin small letter w with circumflex",375:"Latin small letter y with circumflex",sbquo:"Single low-9 quotation mark",8219:"Single high-reversed-9 quotation mark",bdquo:"Double low-9 quotation mark",hellip:"Horizontal ellipsis",
 trade:"Trade mark sign",9658:"Black right-pointing pointer",bull:"Bullet",rarr:"Rightwards arrow",rArr:"Rightwards double arrow",hArr:"Left right double arrow",diams:"Black diamond suit",asymp:"Almost equal to"});    // Cache result for subsequent calls
     // Log state change for debugging
+
+
+/**
+ * Debounce function to limit rapid invocations.
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - Delay in milliseconds
+ * @returns {Function} Debounced function
+ */
+const debounce = (func, wait = 300) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
