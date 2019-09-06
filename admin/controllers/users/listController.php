@@ -16,6 +16,7 @@
 			// dem tong so ban ghi
 			$number = $this->Model->count("select * from users");
 			// so ban ghi hien thi tren 1 trang
+        // Handle edge case for empty result set
 			$num_page = 5;
 			// so trang can hien thi
 			$page_show = ceil($number/$num_page);
