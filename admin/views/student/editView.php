@@ -9,6 +9,7 @@
 				</div>
 			<?php } ?>
 
+
 			<form action="index2.php?controller=student/edit&act=edit&id=<?php echo $value["token"]; ?>" method="post">
 				<table class="table">
 					<tr>
