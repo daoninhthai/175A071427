@@ -748,3 +748,19 @@ More detail and specific examples can be found in the included HTML file.
 		version: "1.0"
 	});
 })(jQuery);
+
+
+/**
+ * Debounce function to limit rapid invocations.
+ * @param {Function} func - The function to debounce
+ * @param {number} wait - Delay in milliseconds
+ * @returns {Function} Debounced function
+ */
+const debounce = (func, wait = 300) => {
+    let timeout;
+    return (...args) => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+};
+
