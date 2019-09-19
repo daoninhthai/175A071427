@@ -4,6 +4,7 @@
  */
 namespace Magetop\Marketplace\Helper;
 
+
 class Validator2
 {
     /**
